@@ -14,39 +14,203 @@
         }
         div{
           text-align: center;
+          
+         
         }
       .ff
       {
         padding-top: 15%;
+        
       }
       .fd{
         padding-top: 5%;
+       
       }
         .img1{
         width : 33% ;
         height:  1%;     
         display: inline-block;
+       position: relative
         }
 
         .img2{
           width : 11%;
           height:17.8%; 
-          display: inline-block;
+        
+          opacity: 1;
 
+
+        }
+        h1{
+          display: inline-block;
+          font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 35px;
+text-align: center;
+letter-spacing: 0.44em;
+opacity: .47;
+color: #FFFFFF;
+position: relative
         }
 
 
+
+
+
+
+
+
+        /* Firefox old*/
+@-moz-keyframes blink {
+    0% {
+        opacity:0;
+           
+
+    }
+    50% {
+        opacity:1;
+           
+
+    }
+    100% {
+        opacity:0;
+           
+
+    }
+} 
+
+@-webkit-keyframes blink {
+    0% {
+        opacity:0;
+           
+
+    }
+    50% {
+        opacity:1;
+           
+
+    }
+    100% {
+        opacity:0;
+           
+
+    }
+}
+/* IE */
+@-ms-keyframes blink {
+    0% {
+        opacity:0;
+           
+
+    }
+    50% {
+        opacity:1;
+           
+
+    }
+    100% {
+        opacity:0;
+           
+
+    }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+    0% {
+        opacity:0;
+           
+
+    }
+    50% {
+        opacity:1;
+           
+
+    }
+    100% {
+        opacity:0;
+           
+
+      
+    }
+} 
+.blink-image {
+    -moz-animation: blink normal 5s  ease-in-out; /* Firefox */
+    -webkit-animation: blink normal 5s  ease-in-out; /* Webkit */
+    -ms-animation: blink normal 5s  ease-in-out; /* IE */
+    animation: blink normal 5s  ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    
+   // $("#div2").fadeOut("slow");
+  
+    $("#fire").fadeTo(4000,0, mul());
+    
+  
+});
+function mul(){
+  setTimeout(function(){
+    var elem = document.getElementById("div");  
+    var elem2 = document.getElementById("div2");  
+
+  var pos = 0;
+  var id = setInterval(frame, 15);
+  function frame() {
+    if (pos == 125) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem2.style.bottom = pos + "px";
+      console.log($('#div').offset().top);
+    }
+  }
+
+  }, 4000)
+  
+
+
+
+}
+</script>
+
+
 	
 	</head>
 	<body>
         <div class="ff" >
-            <img src="design/Group 2.png " class="img1">
+            <img src="design/Group 2.png " class="img1" id="div">
             
         </div>
         <div class = "fd" >
-                <img src="design/ALL STARTS HERE.svg " class="img2">
+                <img src="design/ALL STARTS HERE.svg " class="img2" id="fire">
                 
+        </div>
+        <div class = "fd" >
+          <h1 id="div2">LAUNCHING SOON..</h1>
+          
         </div>
 
 
